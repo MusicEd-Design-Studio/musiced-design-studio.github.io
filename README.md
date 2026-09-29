@@ -23,10 +23,8 @@ An interactive music pedagogy workspace for preservice elementary teachers. Maes
 
 | Path | Purpose |
 | --- | --- |
-| `index.html` | Main teacher workspace |
-| `style.css` | Responsive layout and theme |
-| `app.js` | Drafts, guided coaching, scenarios, revisions, audio demos |
-| `concepts.js` | 71 curriculum concept cards |
+| `index.html` | Main teacher workspace (styles, scripts, concepts, and cat images built in, so it works even when opened on its own) |
+| `concepts.js` | Editable copy of the 71 concept cards (already built into index.html) |
 | `assets/maestro-reference.jpeg` | Supplied Maestro Cat character reference |
 | `assets/cat-*.webp` | Background-removed, sharpened Maestro Cat poses cut from the supplied references |
 | `rhythm-lab/` | Original student rhythm experience, retained as a teaching example |
