@@ -1,8 +1,88 @@
-<!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>MusicEd Design Studio</title><meta name="description" content="A K–6 music pedagogy studio for preservice elementary teachers: understand concepts, explore musical experiences, and develop lesson drafts through guided reflection."><link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='10' fill='%23182942'/%3E%3Ctext x='8' y='30' font-size='30' fill='%23ffc65c'%3E♪%3C/text%3E%3C/svg%3E"><link rel="stylesheet" href="style.css"><script src="concepts.js" defer></script><script src="app.js" defer></script></head><body><a class="skip" href="#content">Skip to workspace</a>
-<header><a class="brand" href="./"><b>♫</b><span><small>MusicEd Design Studio</small></span></a><nav aria-label="Workspace"><button data-page="library" class="active">Concept library</button><button data-page="studio">Teaching studio</button><button data-page="revisions">My revisions <span id="revision-count">0</span></button></nav><button class="source-button" id="sources-open">About & sources ↗</button></header>
-<div class="page-heading"><div><span class="eyebrow">FOR PRESERVICE ELEMENTARY TEACHERS</span><h1>Turn musical understanding<br>into meaningful teaching.</h1></div><p>Choose a concept. Design an experience.<br>Use evidence to make your next teaching move.</p></div>
-<div class="app-layout"><aside class="catalog"><div class="catalog-title"><h2>Curriculum concepts</h2><span id="concept-count"></span></div><label class="sr" for="search">Search musical concepts</label><input id="search" type="search" placeholder="Find a musical concept…"><div class="filters"><label>Grade<select id="grade"><option value="all">All grades</option><option>K</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label><label>Domain<select id="domain"><option value="all">All domains</option><option>Melody</option><option>Rhythm</option><option>Form</option><option>Texture</option><option>Expression</option><option>Other</option></select></label></div><div id="concept-list" class="concept-list" aria-label="Concepts"></div><p class="catalog-note">K–5: supplied curriculum example.<br>Grade 6: proposed extensions.<br>Placement is a starting point, not a readiness test.</p></aside><main id="content" tabindex="-1"></main></div>
-<footer><span>Independent teacher-learning prototype · English · K–6</span><span id="save-status">Drafts and reflections stay in this browser.</span><a href="rhythm-lab/">Try the original Rhythm Lab ↗</a></footer>
-<dialog id="sources"><div class="dialog-head"><h2>Purpose, sources & scope</h2><button data-close="sources" aria-label="Close">×</button></div><p>This studio is for <strong>preservice teachers</strong>. Its purpose is to develop pedagogical content knowledge: knowing a concept, anticipating learners’ thinking, choosing musical experiences, and using evidence to revise instruction.</p><h3>Your curriculum reference</h3><p>The uploaded <em>Curriculum Outline Example.docx</em> contains a screenshot titled “Possible Kodaly-Inspired Curriculum Outline,” attributed to Victoria Boler. It shows K–5 across Melody, Rhythm, Form, Texture, Expression, and Other. Grade 6 additions here are clearly marked proposals. The Grade 5 Expression cell is blank in the supplied image.</p><p>Related entries have been grouped for navigation; their original patterns remain in the notes. “Dotted quarter triplet” is ambiguous in the screenshot, so dotted quarter and triplet are separate entries awaiting instructor confirmation. Definitions, activities, and scenarios here are original instructional drafts, not quotations from the outline.</p><h3>Indiana connections</h3><p>The 2023 Music standards use K–2, 3–5, 6–8, and 9–12 bands. Grade 6 therefore draws from the 6–8 band. The supplied sequence is not an Indiana-mandated grade-by-grade list. The studio provides relevant standards to consider; teachers must verify that their actual task and evidence address a selected standard.</p><h3>How coaching works</h3><p>The current coach uses authored, concept-specific prompts and transparent checks for missing draft sections. It does not use generative AI, interpret arbitrary questions, or validate the quality of prose automatically. Your responses and self-review evidence guide the next step. Instructor or peer review remains part of the learning process.</p><p>Drafts, dialogue, and revision snapshots are stored locally in this browser. They do not sync to other devices or an instructor dashboard. Avoid real children’s names in practice cases.</p><h3>Reference shelf</h3><ul><li><a href="https://www.in.gov/doe/files/IAS-Grades-K-12-Music.pdf" target="_blank" rel="noopener">Indiana Department of Education · 2023 Music Standards</a></li><li><a href="https://www.victoriaboler.com/blog/3-curriculum-outlines" target="_blank" rel="noopener">Victoria Boler · Curriculum outline context</a></li><li><a href="https://viva.pressbooks.pub/openmusictheory/" target="_blank" rel="noopener">Open Music Theory · Music fundamentals reference</a></li><li><a href="https://giml.org/mlt/audiation/" target="_blank" rel="noopener">Gordon Institute for Music Learning · Audiation</a></li><li><a href="https://www.bsu.edu/academics/collegesanddepartments/music/degrees-and-programs/undergraduate-majors/music-education" target="_blank" rel="noopener">Ball State · Music education program</a></li></ul><p class="small">This independent prototype supports practice and reflection; it is not an official Ball State University resource or an endorsed state curriculum. Faculty should review the sequence and examples before course adoption.</p></dialog>
-<dialog id="restore"><h2>Restore this revision?</h2><p>Your current draft will be saved as a snapshot before the selected revision is restored.</p><div class="actions"><button data-close="restore" class="secondary">Cancel</button><button id="restore-confirm" class="primary">Save current & restore</button></div></dialog>
-<div id="toast" role="status" aria-live="polite"></div></body></html>
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>MusicEd Design Studio</title>
+<meta name="description" content="A K to 6 music pedagogy studio for preservice elementary teachers, guided by Maestro Cat.">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 40 40'%3E%3Crect width='40' height='40' rx='20' fill='%23E8892F'/%3E%3Ctext x='9' y='30' font-size='26' fill='%233A2418'%3E%E2%99%AB%3C/text%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,600;12..96,700;12..96,800&family=Figtree:wght@400;500;600;700&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+<script src="concepts.js" defer></script>
+<script src="app.js" defer></script>
+</head>
+<body data-page="library">
+<a class="skip" href="#content">Skip to workspace</a>
+<header class="top">
+ <a class="brand" href="#" id="home-link"><span class="brand-face face" aria-hidden="true"></span>MusicEd Design Studio</a>
+ <nav class="tabs" aria-label="Workspace">
+  <button data-page="library" class="active">Concept library</button>
+  <button data-page="studio">Teaching studio</button>
+  <button data-page="revisions">My revisions <span class="count" id="revision-count">0</span></button>
+  <button data-page="rhythm">Rhythm Lab</button>
+ </nav>
+ <button class="ghost" id="sources-open">About and sources</button>
+</header>
+
+<section class="hero" id="hero" aria-labelledby="hero-title">
+ <div class="hero-inner">
+  <div>
+   <h1 id="hero-title">Turn musical understanding into meaningful teaching.</h1>
+   <p class="lede">Choose a concept, design a musical experience, and use what children do to decide your next teaching move.</p>
+   <div class="hero-actions"><button class="btn-gold" id="hero-browse">Browse the concepts</button><button class="btn-line" data-page="rhythm">Try the Rhythm Lab</button></div>
+  </div>
+  <div class="hero-cat"><div class="bubble-hero">Listen first. Name it second. I'll jump in with you.</div><span class="flipper"><img id="hero-img" alt="Maestro Cat, an orange tabby, leaping forward"></span></div>
+ </div>
+ <div class="staff-wrap">
+  <div class="staff-label" id="staff-label">Pick a grade on the staff. The notes climb from kindergarten to grade 6.</div>
+  <div class="staff" id="staff" role="group" aria-label="Filter concepts by grade"><span class="clef" aria-hidden="true">&#119070;</span></div>
+ </div>
+</section>
+
+<div class="shell">
+ <aside class="catalog" aria-label="Curriculum concepts">
+  <h2>Curriculum concepts <span id="concept-count"></span></h2>
+  <label class="sr" for="search">Search musical concepts</label>
+  <input id="search" type="search" placeholder="Find a musical concept">
+  <div class="filters">
+   <label>Grade<select id="grade"><option value="all">All</option><option>K</option><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option><option>6</option></select></label>
+   <label>Domain<select id="domain"><option value="all">All domains</option><option>Melody</option><option>Rhythm</option><option>Form</option><option>Texture</option><option>Expression</option><option>Other</option></select></label>
+  </div>
+  <div id="concept-list" class="concept-list"></div>
+  <p class="catalog-note">K to 5 follows the supplied curriculum example. Grade 6 entries are proposed extensions. Placement is a starting point, not a readiness test.</p>
+ </aside>
+ <main id="content" tabindex="-1"></main>
+</div>
+
+<footer class="foot"><span>Independent teacher-learning prototype for grades K to 6. Not an official Ball State University product.</span><span id="save-status">Drafts and reflections stay in this browser.</span></footer>
+
+<div class="dock" id="dock">
+ <div class="dock-bubble hide" id="dock-bubble" role="status" aria-live="polite"><b>Maestro Cat</b><span id="dock-text"></span><button id="dock-close" aria-label="Hide Maestro Cat's note">&times;</button></div>
+ <button class="dock-cat" id="dock-cat" aria-label="Ask Maestro Cat for a teaching tip"><img id="dock-img" alt=""></button>
+</div>
+
+<dialog id="sources"><div class="dialog-head"><h2>Purpose, sources, and scope</h2><button class="x" data-close="sources" aria-label="Close">&times;</button></div>
+<p>This studio is for <strong>preservice teachers</strong>. Its purpose is to develop pedagogical content knowledge: knowing a concept, anticipating learners' thinking, choosing musical experiences, and using evidence to revise instruction.</p>
+<h3>Your curriculum reference</h3><p>The uploaded <em>Curriculum Outline Example.docx</em> contains a screenshot titled "Possible Kodaly-Inspired Curriculum Outline," attributed to Victoria Boler. It shows K to 5 across Melody, Rhythm, Form, Texture, Expression, and Other. Grade 6 additions are clearly marked proposals. The Grade 5 Expression cell is blank in the supplied image.</p>
+<p>Related entries have been grouped for navigation. "Dotted quarter triplet" is ambiguous in the screenshot, so dotted quarter and triplet are separate entries awaiting instructor confirmation. Definitions, activities, and scenarios are original instructional drafts, not quotations from the outline.</p>
+<h3>Indiana connections</h3><p>The 2023 Music standards use K to 2, 3 to 5, 6 to 8, and 9 to 12 bands. Grade 6 draws from the 6 to 8 band. The supplied sequence is not an Indiana-mandated grade-by-grade list. Teachers must verify that their actual task and evidence address a selected standard.</p>
+<h3>How coaching works</h3><p>The coach uses authored, concept-specific prompts and transparent checks for missing draft sections. It does not use generative AI, interpret arbitrary questions, or grade the quality of prose. Instructor or peer review remains part of the learning process.</p>
+<p>Drafts, dialogue, and revision snapshots are stored locally in this browser. They do not sync to other devices or an instructor dashboard. Avoid real children's names in practice cases.</p>
+<h3>Reference shelf</h3><ul><li><a href="https://www.in.gov/doe/files/IAS-Grades-K-12-Music.pdf" target="_blank" rel="noopener">Indiana Department of Education, 2023 Music Standards</a></li><li><a href="https://www.victoriaboler.com/blog/3-curriculum-outlines" target="_blank" rel="noopener">Victoria Boler, curriculum outline context</a></li><li><a href="https://viva.pressbooks.pub/openmusictheory/" target="_blank" rel="noopener">Open Music Theory, fundamentals reference</a></li><li><a href="https://giml.org/mlt/audiation/" target="_blank" rel="noopener">Gordon Institute for Music Learning, audiation</a></li><li><a href="https://www.bsu.edu/academics/collegesanddepartments/music/degrees-and-programs/undergraduate-majors/music-education" target="_blank" rel="noopener">Ball State, music education program</a></li></ul>
+<p class="small">Maestro Cat character artwork was supplied by the project owner. Audio demonstrations are generated with browser oscillators; no commercial recordings are included.</p></dialog>
+
+<dialog id="restore"><h2>Restore this revision?</h2><p>Your current draft will be saved as a snapshot before the selected revision is restored.</p><div class="actions"><button data-close="restore" class="secondary">Cancel</button><button id="restore-confirm" class="primary">Save current and restore</button></div></dialog>
+
+<dialog id="teacher"><div class="dialog-head"><h2>Teach the Rhythm Lab</h2><button class="x" data-close="teacher" aria-label="Close educator notes">&times;</button></div>
+<p class="small">Grades 3 to 5, 15 to 20 minutes, speakers and a keyboard or touch screen.</p>
+<div class="teach-grid"><section><h3>Learning targets</h3><ul><li>Maintain a steady pulse over eight beats.</li><li>Read a quarter note, a pair of eighth notes, and a quarter rest in a quarter-note beat context.</li><li>Compare faster and slower tempi.</li><li>Create, listen to, and revise a four-beat rhythm.</li></ul><h3>Teach it in the room</h3><p>Invite students to pat a pulse, echo a short pattern, and describe what changed. Model the rest with silent hands while the beat continues. Let partners alternate performer and observer.</p><h3>Connect</h3><p>Ask: "Where do you notice a steady pulse in your day? Which rhythm would you choose for a celebration, and why?"</p></section>
+<section><h3>Indiana standards connection</h3><p>This introductory practice supports selected ideas in the 2023 Music standards; it is not a complete standards assessment.</p><div class="standard"><strong>P.8.5.2</strong> Pattern practice: keep a consistent tempo.</div><div class="standard"><strong>Lr.5.5.1</strong> Tempo vocabulary applied to listening examples.</div><div class="standard"><strong>Cn.1.5.1</strong> Discuss how personal interests shape musical choices.</div><div class="standard"><strong>Cr.11.5.1</strong> Extension: add words, tempo, and dynamics to the created rhythm, then perform it.</div><h3>Evidence of learning</h3><p>Use the explanation questions, a student's four-beat pattern, and an observed performance. The rescue score is practice feedback, not a grade: device delay and motor access can affect it.</p><h3>Adapt and extend</h3><p>Use the beat lights, slow the tempo, perform with a partner, or respond through movement. Accept an untimed teacher-observed performance as an alternative.</p></section></div>
+<h3>Preservice teacher reflection</h3><p>Teach a two-minute echo activity. What did you observe? What change helped learners keep the pulse?</p><label class="sr" for="reflection">Your teaching notes</label><textarea id="reflection" rows="3" placeholder="I noticed... Next time I will..."></textarea><p class="small" id="reflection-status">Notes are saved only in this browser.</p></dialog>
+
+<dialog id="reset-dialog"><h2>Start the Rhythm Lab again?</h2><p>This clears mission progress and the rhythm pattern in this browser. Your teaching notes stay.</p><div class="actions"><button class="secondary" data-close="reset-dialog">Keep my progress</button><button class="primary" id="confirm-reset">Start fresh</button></div></dialog>
+
+<div id="toast" role="status" aria-live="polite"><span class="face" aria-hidden="true"></span><span id="toast-text"></span></div>
+</body>
+</html>
